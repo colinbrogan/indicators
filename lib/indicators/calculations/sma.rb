@@ -12,11 +12,11 @@ module Indicators
 
       adj_closes.each_with_index do |adj_close, index|
         start = index+1-periods
-      	if index+1 >= periods
+      	if start >= 0
       		adj_closes_sum = adj_closes[start..index].sum
       		output[index] = (adj_closes_sum/periods.to_f)
       	else
-      		output[index] = nil
+      		output[index] =  nil
       	end
       end
       return output
